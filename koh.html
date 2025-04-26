@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forts in Kolhapur</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f9e4b7, #f5c16c); /* Earthy tones */
+            color: #4a2c2a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .forts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .fort-card {
+            background: rgba(255, 245, 235, 0.9); /* Light saffron background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fort-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .fort-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .fort-card h3 {
+            font-size: 20px;
+            color: #b71c1c; /* Deep red for headings */
+            margin: 10px 0;
+        }
+
+        .fort-card p {
+            font-size: 16px;
+            color: #4a2c2a;
+            padding: 0 10px 10px;
+        }
+
+        .fort-card a {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background: #ff6f00;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .fort-card a:hover {
+            background: #e65100;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+            font-size: 16px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Forts in Kolhapur</h1>
+    </header>
+
+    <div class="forts-container">
+        <!-- Fort 1 -->
+        <div class="fort-card">
+            <img src="panhala.jpg" alt="Panhala Fort">
+            <h3>Panhala Fort</h3>
+            <p>Panhala Fort is one of the largest forts in Maharashtra, known for its historical significance and stunning views.</p>
+            <a href="panhala.html">Learn More</a>
+        </div>
+
+        <!-- Fort 2 -->
+        <div class="fort-card">
+            <img src="vishalgad.jpg" alt="Vishalgad Fort">
+            <h3>Vishalgad Fort</h3>
+            <p>Vishalgad Fort is a historic fort that played a key role during the Maratha Empire.</p>
+            <a href="vishalgad.html">Learn More</a>
+        </div>
+
+        <!-- Fort 3 -->
+        <div class="fort-card">
+            <img src="gagangad.jpg" alt="Gagangad Fort">
+            <h3>Gagangad Fort</h3>
+            <p>Gagangad Fort is a hidden gem in Kolhapur, offering breathtaking views of the Sahyadri mountains.</p>
+            <a href="gagangad.html">Learn More</a>
+        </div>
+
+        <!-- Fort 4 -->
+        <div class="fort-card">
+            <img src="bhudargad.jpg" alt="Bhudargad Fort">
+            <h3>Bhudargad Fort</h3>
+            <p>Bhudargad Fort is a lesser-known fort with a rich history and scenic surroundings.</p>
+            <a href="bhudargad.html">Learn More</a>
+        </div>
+
+        <!-- Fort 5 -->
+        <div class="fort-card">
+            <img src="samangad.jpg" alt="Samangad Fort">
+            <h3>Samangad Fort</h3>
+            <p>Samangad Fort is a historic fort known for its strategic location and panoramic views.</p>
+            <a href="samangad.html">Learn More</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Forts of Kolhapur | All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
