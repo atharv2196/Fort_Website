@@ -1,129 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ratangad Fort</title>
-    <style>
-        /* Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ratangad Fort</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f9e4b7, #f5c16c); /* Earthy tones */
-            color: #4a2c2a; /* Dark brown for text */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f9e4b7, #f5c16c);
+      color: #4a2c2a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        section {
-            padding: 40px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
+    header {
+      background: linear-gradient(135deg, #ff6f00, #e65100);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
-        .fort-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            text-align: left;
-            width: 80%;
-            max-width: 1200px;
-        }
+    section {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
 
-        .fort h2 {
-            color: #b71c1c; /* Deep red for headings */
-            font-size: 28px;
-            margin: 0;
-            font-weight: 600;
-            padding: 10px 0;
-            text-align: center;
-        }
+    .fort-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+    }
 
-        .fort h2:hover {
-            color: #d84315; /* Lighter red on hover */
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
+    .fort {
+      text-align: left;
+      padding: 10px;
+    }
 
-        .fort img {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    .fort h2 {
+      color: #b71c1c;
+      font-size: 28px;
+      margin: 10px 0;
+      font-weight: 600;
+      text-align: center;
+    }
 
-        .fort img:hover {
-            transform: scale(1.05);
-        }
+    .fort h2:hover {
+      color: #d84315;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
 
-        .fort p {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-            padding: 10px;
-            background: rgba(255, 245, 235, 0.9); /* Light saffron background */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .fort img {
+      width: 100%;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-        footer {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 16px;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    .fort img:hover {
+      transform: scale(1.05);
+    }
+
+    .fort p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+      padding: 10px;
+      background: rgba(255, 245, 235, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: linear-gradient(135deg, #ff6f00, #e65100);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 16px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+      margin-top: auto;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+      header {
+        font-size: 24px;
+        padding: 15px;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      .fort h2 {
+        font-size: 22px;
+      }
+
+      .fort p {
+        font-size: 15px;
+        padding: 8px;
+      }
+
+      footer {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      header {
+        font-size: 28px;
+        padding: 18px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .fort h2 {
+        font-size: 24px;
+      }
+
+      .fort p {
+        font-size: 16px;
+        padding: 9px;
+      }
+
+      footer {
+        font-size: 15px;
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header><h2>Ratangad Fort</h2></header>
-<section>
-    <div class="fort" id="ratangad">
+  <header><h2>Ratangad Fort</h2></header>
+  <section>
+    <div class="fort-container">
+      <div class="fort" id="ratangad">
         <h2>Ratangad Fort</h2>
         <a href="https://www.google.com/maps?q=Ratangad+Fort,+Maharashtra" target="_blank">
-            <img src="ratangad.jpg" alt="Ratangad Fort">
+          <img src="ratangad.jpg" alt="Ratangad Fort" />
         </a>
-        <hr>
+        <hr />
         <p>
-            <b>Ratangad Fort</b>, located in the Ahmednagar district of Maharashtra, is a historic fort known for its natural beauty and adventurous trekking routes. It is perched atop the Sahyadri mountain range and offers breathtaking views of the surrounding landscapes.
+          <b>Ratangad Fort</b>, located in the Ahmednagar district of Maharashtra, is a historic fort known for its natural beauty and adventurous trekking routes. It is perched atop the Sahyadri mountain range and offers breathtaking views of the surrounding landscapes.
         </p>
-        
         <p>
-            The fort is believed to be over 2000 years old and is closely associated with the Maratha Empire. It features ancient caves, water cisterns, and the iconic "Nedhe" or eye of the needle, a natural rock formation.
+          The fort is believed to be over 2000 years old and is closely associated with the Maratha Empire. It features ancient caves, water cisterns, and the iconic "Nedhe" or eye of the needle, a natural rock formation.
         </p>
-        
         <p>
-            Ratangad Fort is surrounded by lush greenery and is a popular trekking destination. The fort also offers panoramic views of the Bhandardara backwaters and nearby peaks like Kalsubai.
+          Ratangad Fort is surrounded by lush greenery and is a popular trekking destination. The fort also offers panoramic views of the Bhandardara backwaters and nearby peaks like Kalsubai.
         </p>
-        
         <p>
-            Today, <b>Ratangad Fort</b> is a favorite among trekkers and history enthusiasts. Its historical significance and scenic beauty make it a must-visit site in Maharashtra.
+          Today, <b>Ratangad Fort</b> is a favorite among trekkers and history enthusiasts. Its historical significance and scenic beauty make it a must-visit site in Maharashtra.
         </p>
+      </div>
     </div>
-</section>
-<footer>&copy; 2025 Ratangad Fort. All rights reserved.</footer>
+  </section>
+  <footer>&copy; 2025 Ratangad Fort. All rights reserved.</footer>
 </body>
 </html>

@@ -5,32 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purandar Fort</title>
     <style>
-        /* Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f9e4b7, #f5c16c); /* Earthy tones */
-            color: #4a2c2a; /* Dark brown for text */
+            background: linear-gradient(135deg, #f9e4b7, #f5c16c);
+            color: #4a2c2a;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
+            background: linear-gradient(135deg, #ff6f00, #e65100);
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         section {
-            padding: 40px;
+            padding: 30px;
             flex-grow: 1;
             display: flex;
             justify-content: center;
@@ -38,31 +41,33 @@
 
         .fort-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            text-align: left;
-            width: 80%;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
             max-width: 1200px;
         }
 
+        .fort {
+            text-align: left;
+            padding: 10px;
+        }
+
         .fort h2 {
-            color: #b71c1c; /* Deep red for headings */
+            color: #b71c1c;
             font-size: 28px;
-            margin: 0;
+            margin: 10px 0;
             font-weight: 600;
-            padding: 10px 0;
             text-align: center;
         }
 
         .fort h2:hover {
-            color: #d84315; /* Lighter red on hover */
+            color: #d84315;
             text-decoration: underline;
             transition: color 0.3s ease;
         }
 
         .fort img {
             width: 100%;
-            max-width: 500px;
             display: block;
             margin: 20px auto;
             border-radius: 10px;
@@ -80,50 +85,106 @@
             line-height: 1.6;
             text-align: justify;
             padding: 10px;
-            background: rgba(255, 245, 235, 0.9); /* Light saffron background */
+            background: rgba(255, 245, 235, 0.9);
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         footer {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
+            background: linear-gradient(135deg, #ff6f00, #e65100);
             color: white;
             text-align: center;
             padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             font-size: 16px;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+        }
+
+        /* Responsive Styles */
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 24px;
+                padding: 15px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .fort h2 {
+                font-size: 22px;
+            }
+
+            .fort p {
+                font-size: 15px;
+                padding: 8px;
+            }
+
+            .fort img {
+                margin: 10px auto;
+                height: auto;
+            }
+
+            footer {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            header {
+                font-size: 28px;
+                padding: 18px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .fort h2 {
+                font-size: 24px;
+            }
+
+            .fort p {
+                font-size: 16px;
+                padding: 9px;
+            }
+
+            footer {
+                font-size: 15px;
+                padding: 12px;
+            }
         }
     </style>
 </head>
 <body>
-<header><h2>Purandar Fort</h2></header>
-<section>
-    <div class="fort" id="purandar">
-        <h2>Purandar Fort</h2>
-        <a href="https://www.google.com/maps?q=Purandar+Fort,+Maharashtra" target="_blank">
-            <img src="purandar.jpg" alt="Purandar Fort">
-        </a>
-        <hr>
-        <p>
-            <b>Purandar Fort</b>, located near Pune in Maharashtra, is a historic fort with immense significance in Maratha history. It is situated at an altitude of 4,472 feet and offers panoramic views of the surrounding region.
-        </p>
-        
-        <p>
-            The fort is closely associated with Chhatrapati Shivaji Maharaj and is known as the birthplace of his son, Sambhaji Maharaj. It served as a strategic stronghold during the Maratha Empire and played a key role in various battles.
-        </p>
-        
-        <p>
-            Purandar Fort is divided into two parts: the upper fort, known as "Balekilla," and the lower fort. The fort features ancient temples, water reservoirs, and gateways that reflect its historical importance.
-        </p>
-        
-        <p>
-            Today, <b>Purandar Fort</b> is a popular destination for trekkers, history enthusiasts, and nature lovers. Its historical significance and scenic beauty make it a must-visit site in Maharashtra.
-        </p>
-    </div>
-</section>
-<footer>&copy; 2025 Purandar Fort. All rights reserved.</footer>
+    <header><h2>Purandar Fort</h2></header>
+
+    <section>
+        <div class="fort-container">
+            <div class="fort" id="purandar">
+                <h2>Purandar Fort</h2>
+                <a href="https://www.google.com/maps?q=Purandar+Fort,+Maharashtra" target="_blank">
+                    <img src="purandar.jpg" alt="Purandar Fort">
+                </a>
+                <hr>
+                <p>
+                    <b>Purandar Fort</b>, located near Pune in Maharashtra, is a historic fort with immense significance in Maratha history. It is situated at an altitude of 4,472 feet and offers panoramic views of the surrounding region.
+                </p>
+                <p>
+                    The fort is closely associated with Chhatrapati Shivaji Maharaj and is known as the birthplace of his son, Sambhaji Maharaj. It served as a strategic stronghold during the Maratha Empire and played a key role in various battles.
+                </p>
+                <p>
+                    Purandar Fort is divided into two parts: the upper fort, known as "Balekilla," and the lower fort. The fort features ancient temples, water reservoirs, and gateways that reflect its historical importance.
+                </p>
+                <p>
+                    Today, <b>Purandar Fort</b> is a popular destination for trekkers, history enthusiasts, and nature lovers. Its historical significance and scenic beauty make it a must-visit site in Maharashtra.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>&copy; 2025 Purandar Fort. All rights reserved.</footer>
 </body>
 </html>

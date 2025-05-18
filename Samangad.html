@@ -1,129 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samangad Fort</title>
-    <style>
-        /* Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samangad Fort</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f9e4b7, #f5c16c); /* Earthy tones */
-            color: #4a2c2a; /* Dark brown for text */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f9e4b7, #f5c16c);
+      color: #4a2c2a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        section {
-            padding: 40px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
+    header {
+      background: linear-gradient(135deg, #ff6f00, #e65100);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
-        .fort-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            text-align: left;
-            width: 80%;
-            max-width: 1200px;
-        }
+    section {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
 
-        .fort h2 {
-            color: #b71c1c; /* Deep red for headings */
-            font-size: 28px;
-            margin: 0;
-            font-weight: 600;
-            padding: 10px 0;
-            text-align: center;
-        }
+    .fort-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+    }
 
-        .fort h2:hover {
-            color: #d84315; /* Lighter red on hover */
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
+    .fort {
+      text-align: left;
+      padding: 10px;
+    }
 
-        .fort img {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    .fort h2 {
+      color: #b71c1c;
+      font-size: 28px;
+      margin: 10px 0;
+      font-weight: 600;
+      text-align: center;
+    }
 
-        .fort img:hover {
-            transform: scale(1.05);
-        }
+    .fort h2:hover {
+      color: #d84315;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
 
-        .fort p {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-            padding: 10px;
-            background: rgba(255, 245, 235, 0.9); /* Light saffron background */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .fort img {
+      width: 100%;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-        footer {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 16px;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    .fort img:hover {
+      transform: scale(1.05);
+    }
+
+    .fort p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+      padding: 10px;
+      background: rgba(255, 245, 235, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: linear-gradient(135deg, #ff6f00, #e65100);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 16px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+      margin-top: auto;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+      header {
+        font-size: 24px;
+        padding: 15px;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      .fort h2 {
+        font-size: 22px;
+      }
+
+      .fort p {
+        font-size: 15px;
+        padding: 8px;
+      }
+
+      footer {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      header {
+        font-size: 28px;
+        padding: 18px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .fort h2 {
+        font-size: 24px;
+      }
+
+      .fort p {
+        font-size: 16px;
+        padding: 9px;
+      }
+
+      footer {
+        font-size: 15px;
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header><h2>Samangad Fort</h2></header>
-    <section>
-        <div class="fort" id="samangad">
-            <h2>Samangad Fort</h2>
-            <a href="https://www.google.com/maps?q=Samangad+Fort,+Maharashtra" target="_blank">
-                <img src="samangad.jpg" alt="Samangad Fort">
-            </a>
-            <hr>
-            <p>
-                <b>Samangad Fort</b>, located in the Kolhapur district of Maharashtra, is a historic hill fort with immense significance. It is perched atop a hill and offers panoramic views of the surrounding landscapes.
-            </p>
-            
-            <p>
-                The fort has a rich history, having been a strategic stronghold during the Maratha Empire. It was used by Chhatrapati Shivaji Maharaj and later by his successors for defense and administration.
-            </p>
-            
-            <p>
-                Samangad Fort is known for its unique rock-cut caves, ancient fortifications, and gateways. The fort also houses temples and other structures that reflect its historical and cultural importance.
-            </p>
-            
-            <p>
-                Today, <b>Samangad Fort</b> is a popular destination for trekkers, history enthusiasts, and nature lovers. Its serene environment and historical significance make it a must-visit site in Maharashtra.
-            </p>
-        </div>
-    </section>
-<footer>&copy; 2025 Samangad Fort. All rights reserved.</footer>
+  <header><h2>Samangad Fort</h2></header>
+  <section>
+    <div class="fort-container">
+      <div class="fort" id="samangad">
+        <h2>Samangad Fort</h2>
+        <a href="https://www.google.com/maps?q=Samangad+Fort,+Maharashtra" target="_blank">
+          <img src="samangad.jpg" alt="Samangad Fort" />
+        </a>
+        <hr />
+        <p>
+          <b>Samangad Fort</b>, located in the Kolhapur district of Maharashtra, is a historic hill fort with immense significance. It is perched atop a hill and offers panoramic views of the surrounding landscapes.
+        </p>
+        <p>
+          The fort has a rich history, having been a strategic stronghold during the Maratha Empire. It was used by Chhatrapati Shivaji Maharaj and later by his successors for defense and administration.
+        </p>
+        <p>
+          Samangad Fort is known for its unique rock-cut caves, ancient fortifications, and gateways. The fort also houses temples and other structures that reflect its historical and cultural importance.
+        </p>
+        <p>
+          Today, <b>Samangad Fort</b> is a popular destination for trekkers, history enthusiasts, and nature lovers. Its serene environment and historical significance make it a must-visit site in Maharashtra.
+        </p>
+      </div>
+    </div>
+  </section>
+  <footer>&copy; 2025 Samangad Fort. All rights reserved.</footer>
 </body>
 </html>

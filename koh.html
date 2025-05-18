@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forts in Kolhapur</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -92,6 +96,98 @@
             font-size: 16px;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
         }
+
+        /* Mobile-first media queries */
+
+        /* Small screens (mobile, up to 480px) */
+        @media (max-width: 480px) {
+            header {
+                font-size: 24px;
+                padding: 15px;
+            }
+
+            .forts-container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+                gap: 15px;
+                margin: 10px;
+            }
+
+            .fort-card {
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .fort-card img {
+                height: 120px;
+            }
+
+            .fort-card h3 {
+                font-size: 18px;
+                margin: 8px 0;
+            }
+
+            .fort-card p {
+                font-size: 14px;
+                padding: 0 8px 8px;
+            }
+
+            .fort-card a {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            footer {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        /* Medium screens (tablet, 481px to 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            header {
+                font-size: 28px;
+                padding: 18px;
+            }
+
+            .forts-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                padding: 15px;
+                gap: 15px;
+                margin: 15px;
+            }
+
+            .fort-card img {
+                height: 130px;
+            }
+
+            .fort-card h3 {
+                font-size: 19px;
+                margin: 9px 0;
+            }
+
+            .fort-card p {
+                font-size: 15px;
+                padding: 0 9px 9px;
+            }
+
+            .fort-card a {
+                padding: 9px 18px;
+                font-size: 15px;
+            }
+
+            footer {
+                font-size: 15px;
+                padding: 12px;
+            }
+        }
+
+        /* Large screens (desktop, 769px and up) */
+        @media (min-width: 769px) {
+            .forts-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
     </style>
 </head>
 
@@ -143,7 +239,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Forts of Kolhapur | All rights reserved.</p>
+        <p>© 2025 Forts of Kolhapur | All rights reserved.</p>
     </footer>
 </body>
 

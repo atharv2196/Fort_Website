@@ -8,6 +8,10 @@
         /* Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -90,11 +94,99 @@
             color: white;
             text-align: center;
             padding: 15px;
-            position: fixed;
-            bottom: 0;
             width: 100%;
             font-size: 16px;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mobile-first media queries */
+
+        /* Small screens (mobile, up to 480px) */
+        @media (max-width: 480px) {
+            header {
+                font-size: 22px;
+                padding: 15px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .fort-container {
+                grid-template-columns: 1fr;
+                width: 100%;
+                gap: 15px;
+            }
+
+            .fort h2 {
+                font-size: 22px;
+                padding: 8px 0;
+            }
+
+            .fort img {
+                max-width: 100%;
+                margin: 15px auto;
+            }
+
+            .fort p {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            footer {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        /* Medium screens (tablet, 481px to 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            header {
+                font-size: 24px;
+                padding: 18px;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .fort-container {
+                grid-template-columns: 1fr;
+                width: 90%;
+                gap: 18px;
+            }
+
+            .fort h2 {
+                font-size: 24px;
+                padding: 9px 0;
+            }
+
+            .fort img {
+                max-width: 100%;
+                margin: 18px auto;
+            }
+
+            .fort p {
+                font-size: 16px;
+                padding: 9px;
+            }
+
+            footer {
+                font-size: 15px;
+                padding: 12px;
+            }
+        }
+
+        /* Large screens (desktop, 769px and up) */
+        @media (min-width: 769px) {
+            .fort-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+            }
         }
     </style>
 </head>
@@ -124,6 +216,6 @@
         </p>
     </div>
 </section>
-<footer>&copy; 2025 Bhuikot Fort. All rights reserved.</footer>
+<footer>© 2025 Bhuikot Fort. All rights reserved.</footer>
 </body>
 </html>

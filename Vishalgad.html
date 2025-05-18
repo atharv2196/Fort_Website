@@ -1,129 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishalgad Fort</title>
-    <style>
-        /* Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vishalgad Fort</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f9e4b7, #f5c16c); /* Earthy tones */
-            color: #4a2c2a; /* Dark brown for text */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f9e4b7, #f5c16c);
+      color: #4a2c2a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding-bottom: 60px; /* space for fixed footer */
+    }
 
-        header {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
+    header {
+      background: linear-gradient(135deg, #ff6f00, #e65100);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 28px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
 
-        section {
-            padding: 40px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
+    header h1 {
+      margin: 0;
+    }
 
-        .fort-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            text-align: left;
-            width: 80%;
-            max-width: 1200px;
-        }
+    section {
+      padding: 40px 20px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
 
-        .fort h2 {
-            color: #b71c1c; /* Deep red for headings */
-            font-size: 28px;
-            margin: 0;
-            font-weight: 600;
-            padding: 10px 0;
-            text-align: center;
-        }
+    .fort-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 80%;
+      max-width: 1200px;
+      text-align: left;
+    }
 
-        .fort h2:hover {
-            color: #d84315; /* Lighter red on hover */
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
+    .fort {
+      grid-column: 1 / -1;
+    }
 
-        .fort img {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    .fort h2 {
+      color: #b71c1c;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      text-align: center;
+      cursor: default;
+      transition: color 0.3s ease;
+    }
 
-        .fort img:hover {
-            transform: scale(1.05);
-        }
+    .fort h2:hover {
+      color: #d84315;
+      text-decoration: underline;
+    }
 
-        .fort p {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-            padding: 10px;
-            background: rgba(255, 245, 235, 0.9); /* Light saffron background */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .fort a {
+      display: block;
+      max-width: 500px;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
 
-        footer {
-            background: linear-gradient(135deg, #ff6f00, #e65100); /* Saffron shades */
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 16px;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    .fort a:hover {
+      transform: scale(1.05);
+    }
+
+    .fort img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      cursor: pointer;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .fort p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+      padding: 10px;
+      background: rgba(255, 245, 235, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #ff6f00, #e65100);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 16px;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .fort-container {
+        grid-template-columns: 1fr;
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 24px;
+        padding: 15px;
+      }
+      .fort h2 {
+        font-size: 24px;
+      }
+      .fort p {
+        font-size: 16px;
+        padding: 8px;
+      }
+      footer {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header><h2>Vishalgad Fort</h2></header>
-<section>
-    <div class="fort" id="vishalgad">
+  <header>
+    <h1>Vishalgad Fort</h1>
+  </header>
+
+  <section>
+    <div class="fort-container">
+      <div class="fort" id="vishalgad">
         <h2>Vishalgad Fort</h2>
-        <a href="https://www.google.com/maps?q=Vishalgad+Fort,+Maharashtra" target="_blank">
-            <img src="vishalgad.jpg" alt="Vishalgad Fort">
+        <a href="https://www.google.com/maps?q=Vishalgad+Fort,+Maharashtra" target="_blank" rel="noopener noreferrer" aria-label="View Vishalgad Fort on Google Maps">
+          <img src="vishalgad.jpg" alt="Vishalgad Fort" />
         </a>
-        <hr>
+        <hr />
         <p>
-            <b>Vishalgad Fort</b>, located in the Kolhapur district of Maharashtra, is a historic fort with a rich legacy. It is perched atop the Sahyadri mountain range and offers stunning views of the surrounding landscapes.
+          <strong>Vishalgad Fort</strong>, located in the Kolhapur district of Maharashtra, is a historic fort with a rich legacy. It is perched atop the Sahyadri mountain range and offers stunning views of the surrounding landscapes.
         </p>
-        
         <p>
-            The fort played a significant role during the Maratha Empire and is closely associated with the valiant efforts of Chhatrapati Shivaji Maharaj and his warriors. It served as a strategic stronghold and a symbol of resistance.
+          The fort played a significant role during the Maratha Empire and is closely associated with the valiant efforts of Chhatrapati Shivaji Maharaj and his warriors. It served as a strategic stronghold and a symbol of resistance.
         </p>
-        
         <p>
-            Vishalgad Fort is known for its impressive fortifications, ancient gateways, and historical structures. The fort also has temples and monuments that narrate tales of its glorious past.
+          Vishalgad Fort is known for its impressive fortifications, ancient gateways, and historical structures. The fort also has temples and monuments that narrate tales of its glorious past.
         </p>
-        
         <p>
-            Today, <b>Vishalgad Fort</b> is a popular destination for history buffs, trekkers, and nature enthusiasts. Its historical importance and natural beauty make it a must-visit site in Maharashtra.
+          Today, <strong>Vishalgad Fort</strong> is a popular destination for history buffs, trekkers, and nature enthusiasts. Its historical importance and natural beauty make it a must-visit site in Maharashtra.
         </p>
+      </div>
     </div>
-</section>
-<footer>&copy; 2025 Vishalgad Fort. All rights reserved.</footer>
+  </section>
+
+  <footer>
+    &copy; 2025 Vishalgad Fort. All rights reserved.
+  </footer>
 </body>
 </html>
