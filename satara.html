@@ -1,207 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forts in Satara</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forts in Satara</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f9e4b7, #f5c16c);
-      color: #4a2c2a;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9e4b7, #f5c16c);
+            color: #4a2c2a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    header {
-      background: linear-gradient(135deg, #ff6f00, #e65100);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 32px;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
+        header {
+            background: linear-gradient(135deg, #ff6f00, #e65100);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
 
-    nav {
-      background-color: #ff8f00;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+        nav {
+            background-color: #ff8f00;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.5rem;
+        }
 
-    nav a {
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
+        nav a {
+            color: white;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            transition: background 0.3s;
+        }
 
-    nav a:hover {
-      background-color: #e65100;
-    }
+        nav a:hover {
+            background-color: #e65100;
+        }
 
-    .forts-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
 
-    .fort-card {
-      background: rgba(255, 245, 235, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .forts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    .fort-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    }
+        .fort-card {
+            background: rgba(255, 245, 235, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .fort-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
+        .fort-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
 
-    .fort-card h3 {
-      font-size: 20px;
-      color: #b71c1c;
-      margin: 10px 0;
-    }
+        .fort-card img {
+            width: 100%;
+            height: clamp(120px, 20vw, 140px);
+            object-fit: cover;
+        }
 
-    .fort-card p {
-      font-size: 16px;
-      color: #4a2c2a;
-      padding: 0 10px 10px;
-    }
+        .fort-card h3 {
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+            color: #b71c1c;
+            margin: 0.5rem 0;
+        }
 
-    .fort-card a {
-      display: inline-block;
-      margin: 10px 0;
-      padding: 10px 20px;
-      background: #ff6f00;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
+        .fort-card p {
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            color: #4a2c2a;
+            padding: 0 0.5rem 0.5rem;
+        }
 
-    .fort-card a:hover {
-      background: #e65100;
-    }
+        .fort-card a {
+            display: inline-block;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            background: #ff6f00;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            transition: background-color 0.3s ease;
+        }
 
-    footer {
-      background: linear-gradient(135deg, #ff6f00, #e65100);
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 16px;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-      margin-top: auto;
-    }
+        .fort-card a:hover {
+            background: #e65100;
+        }
 
-    @media (max-width: 480px) {
-      header {
-        font-size: 24px;
-        padding: 15px;
-      }
+        footer {
+            background: linear-gradient(135deg, #ff6f00, #e65100);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+        }
 
-      nav a {
-        padding: 10px 12px;
-        font-size: 14px;
-      }
+        /* Extra small screens (up to 360px) */
+        @media (max-width: 360px) {
+            header { padding: 1rem; }
+            .forts-container { grid-template-columns: 1fr; padding: 0.5rem; }
+            .fort-card img { height: 100px; }
+            .fort-card h3 { font-size: 1rem; }
+            .fort-card p { font-size: 0.8rem; }
+            .fort-card a { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
 
-      .fort-card h3 {
-        font-size: 18px;
-      }
+        /* Small screens (up to 600px) */
+        @media (max-width: 600px) {
+            .hamburger { display: block; }
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            nav.active { display: flex; }
+            nav a {
+                padding: 0.5rem;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .forts-container { grid-template-columns: 1fr; }
+        }
 
-      .fort-card p {
-        font-size: 14px;
-      }
+        /* Medium screens (601px to 900px) */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .forts-container { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .fort-card img { height: 130px; }
+        }
 
-      .fort-card a {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
-
-      footer {
-        font-size: 14px;
-        padding: 10px;
-      }
-    }
-  </style>
+        /* Large screens (901px and up) */
+        @media (min-width: 901px) {
+            .forts-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        }
+    </style>
 </head>
 <body>
-
-  <header>Forts in Satara</header>
-
-  <!-- Optional Navigation Bar -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ajinkyatara.html">Ajinkyatara</a>
-    <a href="sajjangad.html">Sajjangad</a>
-    <a href="vasota.html">Vasota</a>
-    <a href="kalyangad.html">Kalyangad</a>
-    <a href="pratapgad.html">Pratapgad</a>
-  </nav>
-
-  <div class="forts-container">
-    <div class="fort-card">
-      <img src="ajinkyatara.jpg" alt="Ajinkyatara Fort">
-      <h3>Ajinkyatara Fort</h3>
-      <p>Ajinkyatara Fort is a historic fort in Satara, known for its panoramic views and Maratha history.</p>
-      <a href="ajinkyatara.html">Learn More</a>
+    <header>Forts in Satara</header>
+    <button class="hamburger" aria-label="Toggle menu">☰</button>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="ajinkyatara.html">Ajinkyatara</a>
+        <a href="sajjangad.html">Sajjangad</a>
+        <a href="vasota.html">Vasota</a>
+        <a href="kalyangad.html">Kalyangad</a>
+        <a href="pratapgad.html">Pratapgad</a>
+    </nav>
+    <div class="forts-container">
+        <div class="fort-card">
+            <img src="ajinkyatara.jpg" alt="Ajinkyatara Fort">
+            <h3>Ajinkyatara Fort</h3>
+            <p>Ajinkyatara Fort is a historic fort in Satara, known for its panoramic views and Maratha history.</p>
+            <a href="ajinkyatara.html">Learn More</a>
+        </div>
+        <div class="fort-card">
+            <img src="sajjangad.jpg" alt="Sajjangad Fort">
+            <h3>Sajjangad Fort</h3>
+            <p>Sajjangad Fort is a spiritual and historic site, associated with the saint Samarth Ramdas.</p>
+            <a href="sajjangad.html">Learn More</a>
+        </div>
+        <div class="fort-card">
+            <img src="vasota.jpg" alt="Vasota Fort">
+            <h3>Vasota Fort</h3>
+            <p>Vasota Fort is a remote fort surrounded by dense forests and the Koyna backwaters, ideal for trekkers.</p>
+            <a href="vasota.html">Learn More</a>
+        </div>
+        <div class="fort-card">
+            <img src="kalyangad.jpg" alt="Kalyangad Fort">
+            <h3>Kalyangad Fort</h3>
+            <p>Kalyangad Fort is a historic fort known for its ancient caves and scenic surroundings.</p>
+            <a href="kalyangad.html">Learn More</a>
+        </div>
+        <div class="fort-card">
+            <img src="pratapgad.jpg" alt="Pratapgad Fort">
+            <h3>Pratapgad Fort</h3>
+            <p>Pratapgad Fort is a historic site famous for the Battle of Pratapgad and its association with Shivaji Maharaj.</p>
+            <a href="pratapgad.html">Learn More</a>
+        </div>
     </div>
-
-    <div class="fort-card">
-      <img src="sajjangad.jpg" alt="Sajjangad Fort">
-      <h3>Sajjangad Fort</h3>
-      <p>Sajjangad Fort is a spiritual and historic site, associated with the saint Samarth Ramdas.</p>
-      <a href="sajjangad.html">Learn More</a>
-    </div>
-
-    <div class="fort-card">
-      <img src="vasota.jpg" alt="Vasota Fort">
-      <h3>Vasota Fort</h3>
-      <p>Vasota Fort is a remote fort surrounded by dense forests and the Koyna backwaters, ideal for trekkers.</p>
-      <a href="vasota.html">Learn More</a>
-    </div>
-
-    <div class="fort-card">
-      <img src="kalyangad.jpg" alt="Kalyangad Fort">
-      <h3>Kalyangad Fort</h3>
-      <p>Kalyangad Fort is a historic fort known for its ancient caves and scenic surroundings.</p>
-      <a href="kalyangad.html">Learn More</a>
-    </div>
-
-    <div class="fort-card">
-      <img src="pratapgad.jpg" alt="Pratapgad Fort">
-      <h3>Pratapgad Fort</h3>
-      <p>Pratapgad Fort is a historic site famous for the Battle of Pratapgad and its association with Shivaji Maharaj.</p>
-      <a href="pratapgad.html">Learn More</a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Forts of Satara | All rights reserved.
-  </footer>
-
+    <footer>© 2025 Forts of Satara | All rights reserved.</footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
